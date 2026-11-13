@@ -1,0 +1,30 @@
+[
+  {
+    "name": "  mARIA  lopez ",
+    "email": "maria.lopez@example.com",
+    "bib": 7,
+    "shirtSize": "m",
+    "donation": 25,
+    "emergencyContact": { "name": "Ana Lopez", "phone": "555-555-0142" }
+  },
+  {
+    "name": "jamal REED",
+    "email": "jamal.reed@example.com",
+    "bib": 12,
+    "shirtSize": " xl ",
+    "emergencyContact": null
+  },
+  {
+    "name": "Priya   Shah",
+    "email": "priya.shah@example.com",
+    "bib": 58,
+    "shirtSize": "S",
+    "donation": 0,
+    "emergencyContact": { "name": "Dev Shah", "phone": "555-555-0177" }
+  },
+  {
+    "name": "sam okafor ",
+    "email": "sam.okafor@example.com",
+    "bib": 103
+  }
+]

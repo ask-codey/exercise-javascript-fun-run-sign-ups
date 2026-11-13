@@ -1,0 +1,8 @@
+{
+  "name": "fun-run-sign-ups",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
