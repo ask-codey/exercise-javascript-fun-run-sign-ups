@@ -2,7 +2,7 @@
 // You don't need to change this file.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { tidyName, bibNumber, shirtSize, donation, emergencyPhone, saveSignups, loadSignups } from './signups.js';
+import { tidyName, bibNumber, daysToGo, shirtSize, donation, emergencyPhone, saveSignups, loadSignups } from './signups.js';
 
 test('tidyName: trimmed, one space between words, each word capitalized', () => {
   assert.equal(tidyName('  mARIA  lopez '), 'Maria Lopez', "'  mARIA  lopez ' becomes 'Maria Lopez'.");
@@ -17,6 +17,14 @@ test('bibNumber: at least four digits, zeros in front', () => {
   assert.equal(bibNumber(58), '0058', 'Runner 58 wears 0058.');
   assert.equal(bibNumber(250), '0250', 'Runner 250 wears 0250.');
   assert.equal(bibNumber(12345), '12345', 'A number with five digits stays as it is: 12345.');
+});
+
+test('daysToGo: whole days until race day, and 0 on or after it', () => {
+  assert.equal(daysToGo(new Date(2026, 3, 30), new Date(2026, 4, 16)), 16, 'April 30 to May 16, 2026 is 16 days.');
+  assert.equal(daysToGo(new Date(2026, 2, 1), new Date(2026, 2, 15)), 14,
+    'March 1 to March 15, 2026 is 14 days. Where the clocks change on March 8, that day has 23 hours: round, don\'t cut off.');
+  assert.equal(daysToGo(new Date(2026, 4, 16), new Date(2026, 4, 16)), 0, 'On race day there are 0 days to go.');
+  assert.equal(daysToGo(new Date(2026, 4, 20), new Date(2026, 4, 16)), 0, 'After the race, it stays 0, never a negative number.');
 });
 
 test('shirtSize: in capitals, trimmed, and M when there is none', () => {

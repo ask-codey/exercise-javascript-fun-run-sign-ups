@@ -2,7 +2,7 @@
 
 Exercise code for the lesson **Exercise: Fun Run Sign-Ups** in JavaScript in Depth on [ask-codey.com](https://www.ask-codey.com).
 
-The Riverside 5K Fun Run's sign-up form collected names typed every which way, shirt sizes some runners skipped, donations left blank, and emergency contacts that are sometimes missing. You'll finish seven small functions in `signups.js` that tidy it all up for the check-in table: names, bib numbers, shirt sizes, donations, emergency phone numbers, and saving and loading the list as JSON. Tests check every function.
+The Riverside 5K Fun Run's sign-up form collected names typed every which way, shirt sizes some runners skipped, donations left blank, and emergency contacts that are sometimes missing. You'll finish eight small functions in `signups.js` that tidy it all up for the check-in table: names, bib numbers, the days left until race day, shirt sizes, donations, emergency phone numbers, and saving and loading the list as JSON. Tests check every function.
 
 ## Before you start
 
@@ -10,7 +10,7 @@ You need Node.js installed (`node --version` in a terminal prints its version). 
 
 ## What's here
 
-- `signups.js`: the seven functions, each returning a placeholder (`''`, `0` or `[]`) for now. The comment above each one says what it should return, with examples. For you to finish.
+- `signups.js`: the eight functions, each returning a placeholder (`''`, `0` or `[]`) for now. The comment above each one says what it should return, with examples. For you to finish.
 - `report.js`: prints the check-in sheet from `signups.json` using your functions, and saves the tidied list in `checked-in.json`. Ready to use.
 - `signups.json`: four runners' sign-ups, as the form saved them, messy text and all. Ready to use.
 - `signups.test.js`: the tests that check your functions. You don't need to change it.
@@ -46,6 +46,7 @@ At first every test fails: that is expected. Each function you finish turns its 
 - Work `tidyName` out by hand first: what do `trim`, then `split(' ')`, give you for `'  mARIA  lopez '`? Which pieces do you need to throw away?
 - Fixing one word is the first letter as a capital plus the rest in small letters. `map` does that to every word in an array, and `join` puts the words back together.
 - `padStart` is a string method, and a bib number is a number.
+- Subtracting two dates gives milliseconds. *Dates and Times* shows how to turn them into days, and why to round.
 - `JSON.stringify` takes two more arguments that make its text readable.
 - Put the risky line inside `try { }`, and say what to return instead in `catch (error) { }`.
 

@@ -1,4 +1,4 @@
-// The Riverside 5K's sign-ups: seven small functions for you to finish.
+// The Riverside 5K's sign-ups: eight small functions for you to finish.
 //
 // Each function returns a placeholder for now (0, '' or []). Replace the placeholder with your own
 // code, on the TODO line. The comment above each function says what it should return, with examples.
@@ -30,6 +30,21 @@ export function tidyName(typed) {
 export function bibNumber(number) {
   // TODO: replace '' with your code.
   return '';
+}
+
+/*
+ * How many days are left from today until race day, as a whole number. A day can be 23 or 25
+ * hours long when the clocks change for daylight saving time, so round to the nearest whole day.
+ * On race day itself, and after it, there are 0 days to go.
+ *
+ * daysToGo(new Date(2026, 3, 30), new Date(2026, 4, 16)) -> 16   (April 30 to May 16)
+ * daysToGo(new Date(2026, 2, 1), new Date(2026, 2, 15)) -> 14    (the clocks change on March 8)
+ * daysToGo(new Date(2026, 4, 16), new Date(2026, 4, 16)) -> 0    (race day)
+ * daysToGo(new Date(2026, 4, 20), new Date(2026, 4, 16)) -> 0    (the race is over)
+ */
+export function daysToGo(today, raceDay) {
+  // TODO: replace 0 with your code.
+  return 0;
 }
 
 /*
