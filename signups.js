@@ -1,4 +1,4 @@
-// The Riverside 5K's sign-ups: eight small functions for you to finish.
+// The Riverside 5K's sign-ups: nine small functions for you to finish.
 //
 // Each function returns a placeholder for now (0, '' or []). Replace the placeholder with your own
 // code, on the TODO line. The comment above each function says what it should return, with examples.
@@ -82,6 +82,22 @@ export function donation(runner) {
  * emergencyPhone({}) -> 'No emergency contact'
  */
 export function emergencyPhone(runner) {
+  // TODO: replace '' with your code.
+  return '';
+}
+
+/*
+ * A phone number written the one way the check-in sheet uses: three digits, a hyphen, three
+ * digits, a hyphen and four digits. Runners type their numbers every way there is, so take out
+ * every character that isn't a digit first. A number that doesn't have exactly ten digits then
+ * can't be a phone number, and gives ''.
+ *
+ * cleanPhone('(555) 555-0142') -> '555-555-0142'
+ * cleanPhone('555.555.0177') -> '555-555-0177'
+ * cleanPhone('555 555 0123') -> '555-555-0123'
+ * cleanPhone('555-0142') -> ''   (only seven digits)
+ */
+export function cleanPhone(typed) {
   // TODO: replace '' with your code.
   return '';
 }

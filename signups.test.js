@@ -2,7 +2,7 @@
 // You don't need to change this file.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { tidyName, bibNumber, daysToGo, shirtSize, donation, emergencyPhone, saveSignups, loadSignups } from './signups.js';
+import { tidyName, bibNumber, daysToGo, shirtSize, donation, emergencyPhone, cleanPhone, saveSignups, loadSignups } from './signups.js';
 
 test('tidyName: trimmed, one space between words, each word capitalized', () => {
   assert.equal(tidyName('  mARIA  lopez '), 'Maria Lopez', "'  mARIA  lopez ' becomes 'Maria Lopez'.");
@@ -50,6 +50,15 @@ test("emergencyPhone: the contact's phone, or 'No emergency contact'", () => {
   assert.equal(emergencyPhone({ name: 'Sam Okafor' }), 'No emergency contact', 'Sam has no emergencyContact at all.');
   assert.equal(emergencyPhone({ name: 'Lee Park', emergencyContact: { name: 'Jo Park' } }), 'No emergency contact',
     "Lee's contact has no phone.");
+});
+
+test("cleanPhone: written as 555-555-0142, or '' when it isn't ten digits", () => {
+  assert.equal(cleanPhone('(555) 555-0142'), '555-555-0142',
+    "'(555) 555-0142' becomes '555-555-0142': take out every character that isn't a digit, then put the hyphens back.");
+  assert.equal(cleanPhone('555.555.0177'), '555-555-0177', "Dots go too: '555.555.0177' becomes '555-555-0177'.");
+  assert.equal(cleanPhone('555 555 0123'), '555-555-0123', "Spaces go too: '555 555 0123' becomes '555-555-0123'.");
+  assert.equal(cleanPhone('555-0142'), '', "'555-0142' has only seven digits, so it can't be a phone number: ''.");
+  assert.equal(cleanPhone('555-555-01425'), '', "'555-555-01425' has eleven digits, one too many: ''.");
 });
 
 test('saveSignups: JSON text, indented by 2 spaces', () => {
